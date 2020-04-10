@@ -44,9 +44,11 @@ python3 askew.py -i images/example.jpg --mode single  --theta 120 --gamma 120  -
 ## Animation
 
 ![](example/output.gif)
+
 Rotate along YZ axis and translate 5 pixel along X axis
 
 ![](example/output.jpg)
+
 Rotate along XZ axis
 
 ## Parameters:
