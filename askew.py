@@ -47,7 +47,7 @@ if not os.path.isdir('output'):
 
 if options.mode == 'single':
     rotated_img = it.rotate_along_axis(theta=options.theta, phi=options.phi, gamma=options.gamma, dx=options.dx, dy=options.dy, dz=options.dz)
-    save_image(f'example/{options.output}{file_extension}', rotated_img)
+    save_image(f'output/{options.output}{file_extension}', rotated_img)
 elif options.mode == 'multi':
     rot_array = [rot for rot in [options.theta, options.phi, options.gamma, options.dx, options.dy, options.dz] if rot is not 0]
     if len(rot_array) == 0:
@@ -67,5 +67,3 @@ elif options.mode == 'multi':
         subprocess.run(["convert", f"output/{options.output}-%d{file_extension}[0-{rot_range - 1}]", f"example/{options.output}.gif"])
 else:
     raise ValeuError('Mode not recognized')
-
-

@@ -1,4 +1,4 @@
-# Perspective Transformation along specific axes
+# ASKEW: Perspective transform along specified axes
 
 This is a rewrite of [the original repo](https://github.com/eborboihuc/rotate_3d)
 
@@ -71,4 +71,3 @@ it.rotate_along_axis(theta=0, phi=0, gamma=0, dx=0, dy=0, dz=0):
 ## Acknowledgments
 
 Code ported and modified from [jepson](http://jepsonsblog.blogspot.tw/2012/11/rotation-in-3d-using-opencvs.html) and [stackoverflow](http://stackoverflow.com/questions/17087446/how-to-calculate-perspective-transform-for-opencv-from-rotation-angles). Thanks for their excellent work!
-
