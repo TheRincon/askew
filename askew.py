@@ -53,14 +53,20 @@ elif options.mode == 'multi':
     if len(rot_array) == 0:
         raise ValueError('No rotations were set, please use command line flags -p, -t, -g, dx, dy, or dz and set at least one to an int')
     rot_range = max(rot_array) if max(rot_array) > 0 else 360
+    theta_arr=np.linspace(0,options.theta,rot_range, dtype = int)
+    phi_arr=np.linspace(0,options.phi,rot_range, dtype = int)
+    gamma_arr=np.linspace(0,options.gamma,rot_range, dtype = int)
+    dx_arr=np.linspace(0,options.dx,rot_range, dtype = int)
+    dy_arr=np.linspace(0,options.dy,rot_range, dtype = int)
+    dz_arr=np.linspace(0,options.dz,rot_range, dtype = int)
     for ang in range(0, rot_range):
         rotated_img = it.rotate_along_axis(
-            theta=np.linspace(0,options.theta,rot_range, dtype = int)[ang],
-            phi=np.linspace(0,options.phi,rot_range, dtype = int)[ang],
-            gamma=np.linspace(0,options.gamma,rot_range, dtype = int)[ang],
-            dx=np.linspace(0,options.dx,rot_range, dtype = int)[ang],
-            dy=np.linspace(0,options.dy,rot_range, dtype = int)[ang],
-            dz=np.linspace(0,options.dz,rot_range, dtype = int)[ang]
+            theta=theta_arr[ang],
+            phi=phi_arr[ang],
+            gamma=gamma_arr[ang],
+            dx=dx_arr[ang],
+            dy=dy_arr[ang],
+            dz=dz_arr[ang]
         )
         save_image('output/{}-{}.jpg'.format(options.output, str(ang)), rotated_img)
     if options.j:

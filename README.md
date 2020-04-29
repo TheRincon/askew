@@ -2,13 +2,13 @@
 
 This is a rewrite of [the original repo](https://github.com/eborboihuc/rotate_3d)
 
-Why a clone and not a fork? I think the original repo is great, and it is a really cool project that I use all the time. That being said, it has too many comments, requires manual changing of parameters everytime and does not support python3. I added proportional rotation for all three axes, and an option to make a gif from the tool, if imagemagick is installed. This was a fairly small change of course, but I also plan to add more image resizing based on the change in perspective (with the original you must calculate the ideal height and width yourself and pass it into the program as an awkward tuple argument).
+Why a clone and not a fork? I think the original repo is great, and it is a really cool project that I use all the time. That being said, it has too many comments, requires manual changing of parameters every time, and does not support python3. I added proportional rotation for all three axes, and an option to make a gif from the tool, if imagemagick is installed. This was a fairly small change of course, but I also plan to add more image resizing based on the change in perspective (with the original you must calculate the ideal height and width yourself and pass it into the program as an awkward tuple argument).
 
-I would try to fork, and make a PR but it does not look like it is supported.
+I would try to fork and make a PR, but it does not look like it is supported currently.
 
-Finally I added the option to make a GIF with a flag if imagemagick is installed.
+Finally, I added the option to make a GIF with a flag if imagemagick is installed.
 
-## Author
+## Original Author
 
 Hou-Ning Hu / [@eborboihuc](https://eborboihuc.github.io/)
 
@@ -21,7 +21,7 @@ This version is made for:
 - OpenCV
 - Imagemagick* if you wish to make a GIF
 
-It should be able to run on any unix system with Python3, and does not require a specific version of OpenCV
+Unlike the previous version, it should be able to run on any unix system with Python3, and does not require a specific version of OpenCV.
 
 ## Usage
 
@@ -67,6 +67,10 @@ it.rotate_along_axis(theta=0, phi=0, gamma=0, dx=0, dy=0, dz=0):
 - dx           : translation along the x axis
 - dy           : translation along the y axis
 - dz           : translation along the z axis (distance to the image)
+
+## Calculate max height and width
+
+In order to calculate max height and width, as far as I know, we must pre-calculate each degree rotation and
 
 ## Acknowledgments
 
