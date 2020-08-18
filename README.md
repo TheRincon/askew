@@ -32,7 +32,7 @@ askew.py [-i image_path] [-o outout] [--mode] [--theta] [--phi] [--gamma] [--len
 Example of rotating an image along yz-axis from 0 to 360 degree with a 5 pixel shift in +X direction and making a GIF:
 
 ```bash
-python3 askew.py -i images/example.jpg -o output --mode multi --phi 360 --gamma 360 --dx 5 -j
+python3 askew.py -i images/example.jpg -o output --mode multi --phi 360 --gamma 360 -j --bg '#665151'
 ```
 
 Single image:

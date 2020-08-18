@@ -7,7 +7,6 @@ import cv2
 #     2. http://jepsonsblog.blogspot.tw/2012/11/rotation-in-3d-using-opencvs.html
 #     3. https://en.wikipedia.org/wiki/3D_projection#Perspective_projection
 
-
 class ImageTransformer(object):
     def __init__(self, image_path, height=None, width=None):
         self.image_path = image_path
@@ -18,7 +17,7 @@ class ImageTransformer(object):
         self.num_channels = self.image.shape[2]
 
 
-    def rotate_along_axis(self, theta=0, phi=0, gamma=0, dx=0, dy=0, dz=0):
+    def rotate_along_axis(self, bg, theta=0, phi=0, gamma=0, dx=0, dy=0, dz=0):
 
         rtheta, rphi, rgamma = get_rad(theta, phi, gamma)
 
@@ -28,7 +27,7 @@ class ImageTransformer(object):
         dz = self.focal
         mat = self.get_M(rtheta, rphi, rgamma, dx, dy, dz)
 
-        return cv2.warpPerspective(self.image.copy(), mat, (self.width, self.height))
+        return cv2.warpPerspective(self.image.copy(), mat, (self.width, self.height), borderValue=bg)
 
 
     def get_M(self, theta, phi, gamma, dx, dy, dz):
