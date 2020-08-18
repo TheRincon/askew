@@ -26,7 +26,7 @@ Unlike the previous version, it should be able to run on any unix system with Py
 ## Usage
 
 ```bash
-askew.py [-i image_path] [-o outout] [--mode] [--theta] [--phi] [--gamma] [--length] [--width] [--dx] [--dy] [--dz]
+python3 askew.py [-i image_path] [-o outout] [--mode] [--theta] [--phi] [--gamma] [--length] [--width] [--dx] [--dy] [--dz] [-j gif]
 ```
 
 Example of rotating an image along yz-axis from 0 to 360 degree with a 5 pixel shift in +X direction and making a GIF:
@@ -45,11 +45,11 @@ python3 askew.py -i images/example.jpg --mode single  --theta 120 --gamma 120  -
 
 ![](example/output.gif)
 
-Rotate along YZ axis and translate 5 pixel along X axis
+Gif rotating along YZ axes and translate 5 pixel along X axis
 
 ![](example/output.jpg)
 
-Rotate along XZ axis
+Single frame rotated 120 degrees along the XZ axes
 
 ## Parameters:
 
